@@ -30,11 +30,15 @@ class Customer extends CI_Controller {
         $this->load->view('template/backfooter');
     }
 
+
+
     public function newdata() {
         $this->load->view('template/backheader');
         $this->load->view('customer/newdata');
         $this->load->view('template/backfooter');
     }
+
+
     /*
     public function register() {
         //$this->load->view('template/backheader');
@@ -52,6 +56,8 @@ class Customer extends CI_Controller {
         //$this->load->view('template/backfooter');
     }
     */
+
+
     public function postdata() {
         if ($this->input->server('REQUEST_METHOD') == TRUE) {
 
@@ -113,6 +119,33 @@ class Customer extends CI_Controller {
                     'alpha_numeric' => 'ต้องเป็นตัวอักษรภาษาอังกฤษและตัวเลขเท่านั้น'
                 ));*/
                 $this->form_validation->set_rules('firstname', 'ชื่อจริง', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                $this->form_validation->set_rules('lastname', 'นามสกุล', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                $this->form_validation->set_rules('phone', 'เบอร์โทรศัพท์', 'trim|required|min_length[10]|max_length[10]|numeric', array(
+                    'trim' => 'มีค่าว่าง',
+                    'required' => 'ค่าห้ามว่าง',
+                    'min_length' => 'ต้องมากกว่า 9 ตัวอักษรขึ้นไป',
+                    'max_length' => 'ต้องน้อยกว่า 11 ตัวอักษรลงไป',
+                    'numeric' => 'ต้องตัวเลข 0 - 9 เท่านั้น'
+                ));
+                $this->form_validation->set_rules('email', 'อีเมล์', 'trim|required|valid_email', array(
+                    'trim' => 'มีค่าว่าง',
+                    'required' => 'ค่าห้ามว่าง',
+                    'valid_email' => 'รูปแบบอีเมล์ไม่ถูกต้อง'
+                ));
+                //$this->form_validation->set_rules('Facebook', 'Facebook', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                //$this->form_validation->set_rules('line', 'line', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                //$this->form_validation->set_rules('instargram', 'instargram', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                $this->form_validation->set_rules('Address', 'Address', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                $this->form_validation->set_rules('City', 'City', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                $this->form_validation->set_rules('State', 'State', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                $this->form_validation->set_rules('Postal_Code', 'Postal_Code', 'required|numeric', array(
+                    'required' => 'ค่าห้ามว่าง!',
+                    'numeric' => 'เป็นตัวเลขเท่านั้น!'
+                    ));
+                $this->form_validation->set_rules('Country', 'Country', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                
+
+
             } else {
                 /*$this->form_validation->set_rules('password', 'รหัสผ่านเข้าใช้งาน', 'trim|min_length[6]|max_length[20]|alpha_numeric', array(
                     'trim' => 'มีค่าว่าง',
@@ -121,6 +154,30 @@ class Customer extends CI_Controller {
                     'alpha_numeric' => 'ต้องเป็นตัวอักษรภาษาอังกฤษและตัวเลขเท่านั้น'
                 ));*/
                 $this->form_validation->set_rules('firstname', 'ชื่อจริง', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                $this->form_validation->set_rules('lastname', 'นามสกุล', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                $this->form_validation->set_rules('phone', 'เบอร์โทรศัพท์', 'trim|required|min_length[10]|max_length[10]|numeric', array(
+                    'trim' => 'มีค่าว่าง',
+                    'required' => 'ค่าห้ามว่าง',
+                    'min_length' => 'ต้องมากกว่า 9 ตัวอักษรขึ้นไป',
+                    'max_length' => 'ต้องน้อยกว่า 11 ตัวอักษรลงไป',
+                    'numeric' => 'ต้องตัวเลข 0 - 9 เท่านั้น'
+                ));
+                $this->form_validation->set_rules('email', 'อีเมล์', 'trim|required|valid_email', array(
+                    'trim' => 'มีค่าว่าง',
+                    'required' => 'ค่าห้ามว่าง',
+                    'valid_email' => 'รูปแบบอีเมล์ไม่ถูกต้อง'
+                ));
+                //$this->form_validation->set_rules('Facebook', 'Facebook', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                //$this->form_validation->set_rules('line', 'line', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                //$this->form_validation->set_rules('instargram', 'instargram', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                $this->form_validation->set_rules('Address', 'Address', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                $this->form_validation->set_rules('City', 'City', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                $this->form_validation->set_rules('State', 'State', 'required', array('required' => 'ค่าห้ามว่าง!'));
+                $this->form_validation->set_rules('Postal_Code', 'Postal_Code', 'required|numeric', array(
+                    'required' => 'ค่าห้ามว่าง!',
+                    'numeric' => 'เป็นตัวเลขเท่านั้น!'
+                    ));
+                $this->form_validation->set_rules('Country', 'Country', 'required', array('required' => 'ค่าห้ามว่าง!'));
             }
 
 
@@ -152,9 +209,27 @@ class Customer extends CI_Controller {
                     'error_password' => form_error('password'),*/
                     'firstname' => set_value('firstname'),
                     'error_firstname' => form_error('firstname'),
+                    'lastname' => set_value('lastname'),
+                    'error_lastname' => form_error('lastname'),
+                    'phone' => set_value('phone'),
+                    'error_phone' => form_error('phone'),
+                    'email' => set_value('email'),
+                    'error_email' => form_error('email'),
+                    'Address' => set_value('Address'),
+                    'error_Address' => form_error('Address'),
+                    'City' => set_value('City'),
+                    'error_City' => form_error('City'),
+                    'State' => set_value('State'),
+                    'error_State' => form_error('State'),
+                    'Postal_Code' => set_value('Postal_Code'),
+                    'error_Postal_Code' => form_error('Postal_Code'),
+                    'Country' => set_value('Country'),
+                    'error_Country' => form_error('Country'),
                     'err_filename' => form_error('filename'),
                     'err_filename' => $this->upload->display_errors()
+                    
                 );
+
                 $this->session->set_flashdata($data);
 
                 if ($_FILES['userfile']['name'] <> '' && $this->input->post('datafile') == '') {
@@ -302,6 +377,13 @@ class Customer extends CI_Controller {
         $data['customer'] = $this->Customer_model->read_customer($id);
         $this->load->view('template/backheader');
         $this->load->view('customer/edit', $data);
+        $this->load->view('template/backfooter');
+    }
+
+    public function read($id) {
+        $data['customer'] = $this->Customer_model->read_customer($id);
+        $this->load->view('template/backheader');
+        $this->load->view('customer/address', $data);
         $this->load->view('template/backfooter');
     }
 
