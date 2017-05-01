@@ -20,7 +20,7 @@ class Loadpost {
         }
         elseif($this->CI->session->userdata('user_type') == 'admin')
             {
-              if($this->CI->router->method=='remove')
+              if($this->CI->router->method=='')
                 {
                   redirect('dashboard/permission','refresh');
                   exit();

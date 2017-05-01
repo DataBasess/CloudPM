@@ -27,9 +27,11 @@
   </span>
 
         <form role="form" action="<?php echo base_url('Admin/validlogin') ?>" method="post">
+            <?=$this->session->flashdata('msgerr')?>
             <input type="username" name="username" id="username" placeholder="username">
             <input type="password" name="password" id="password" placeholder="password">
-            <button type="submit" class="btn btn-success">Sign in</button>
+            <button type="submit" class="btn btn-success">button</button>
+            <a type="submit" class="btn btn-success">Sign in</a>
             <div id="remember-container">
                 <input type="checkbox" id="checkbox-2-1" class="checkbox" checked="checked" />
                 <span id="remember">Remember me</span>

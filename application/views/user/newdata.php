@@ -30,7 +30,7 @@
                         <input type="file" name="userfile" id="userfile" >
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">ประเภทผู้ใช้งาน</label> <?php echo $this->session->flashdata('error_user_type'); ?>
+                        <label for="exampleInputEmail1">คำนำหน้า</label> <?php echo $this->session->flashdata('error_user_type'); ?>
                         <select class="form-control" name="user_type">
                             <option value="root">
                                 นาย
