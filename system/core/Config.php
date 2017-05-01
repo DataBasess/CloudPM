@@ -104,7 +104,7 @@ class CI_Config {
 			}
 			else
 			{
-				$base_url = 'http://localhost/';
+				$base_url = 'http://cloud-store-version0.azurewebsites.net';
 			}
 
 			$this->set_item('base_url', $base_url);

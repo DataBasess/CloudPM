@@ -270,7 +270,7 @@ if ( ! is_php('5.4'))
 		define('ICONV_ENABLED', FALSE);
 	}
 
-	if (is_php('5.6'))
+	if (is_php('7.0'))
 	{
 		ini_set('php.internal_encoding', $charset);
 	}

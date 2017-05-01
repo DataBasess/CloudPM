@@ -6,10 +6,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '21519097',
-	'database' => 'cloudst',
+	'hostname' => 'ap-cdbr-azure-southeast-b.cloudapp.net',
+	'username' => 'beb179e9299546',
+	'password' => 'e8826449',
+	'database' => 'testcloud',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => 'st_',
 	'pconnect' => FALSE,
